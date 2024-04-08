@@ -1,0 +1,23 @@
+#include <studio.h>
+int main() {
+    char *filename = "important_file.txt";
+    int option;
+    // Checks if 1) the file exists and 2) the contents is ‘ls ’, returns true 
+    // if it is, false if one of these conditions are not true.
+    if (exists_and_check_contents(filename)) {
+        return 1;
+    }
+
+    printf("Please give an option: \n 1: Print content \n 2: Execute content");
+    scanf("%d", option);
+
+    // No need for checking the file , since we already did that at line 8.
+    if (option == 1) {
+        // Print the content of filename to the screen print_contents_of_file(filename );
+    } else if (option == 2) {
+        // Execute the command listed in the file 
+        execute_command_in_file(filename );
+    } else { printf("Option does not exists.");
+    }
+    return 0 ;
+}
